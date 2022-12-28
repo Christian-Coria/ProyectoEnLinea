@@ -127,7 +127,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False #True   es el cambio horario para que pytest no de error
 
 
 # Static files (CSS, JavaScript, Images)
@@ -136,7 +136,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static") #estaticos de Produccion
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static_dev'),) #estaticos de desarrollo  ojas de estilo ...logos...todo de la desarrollo
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static_dev'),) #estaticos de desarrollo  ojas de estilo ...logos...todo de la desarrollo asi los estilos x ej los bbusca ahi
 MEDIA_URL = '/media/'#    videos o info grafica etc del panel de usuario
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -151,3 +151,25 @@ LOGIN_URL = 'django.contib.auth.views.login'
 ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
 REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
 SITE_ID = 1 # va a determinar cuantos sitios se utilizan en el registro ... siempre es uno solo para que no de error
+
+
+# UniTest
+
+if DEBUG:
+    MIDDLEWARE += [
+        "debug_toolbar.middleware.DebugToolbarMiddleware",
+    ]
+    INSTALLED_APPS += [
+        "debug_toolbar",
+    ]
+    INTERNAL_IPS = [
+        "127.0.0.1",
+    ]
+
+    import mimetypes
+
+    mimetypes.add_type("application/javascript", ".js", True)
+
+    DEBUG_TOOLBAR_CONFIG ={
+        "INTERCEPT_REDIRECTS" : False,
+    }
