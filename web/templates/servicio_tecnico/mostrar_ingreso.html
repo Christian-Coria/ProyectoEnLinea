@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+Datos de Reparacion
+{% endblock title %}
+
+{% block contenido %}
+
+<div class="container-fluid">
+    <div class="row col-12">
+                   
+        <h4>ORDEN DE REPARACION</h4>
+            <ul class="list-group list-group-horizontal-sm">
+                    
+                <li class="list-group-item">{{object.id}}</li>
+                <li class="list-group-item">{{object.fecha}}</li>
+                        
+            </ul>
+                    
+            <ul class="list-group">
+                <li class="list-group-item">DETALLE DE REPARACION</li>
+                <h2>Cliente</h2>
+                <li class="list-group-item list-group-item-dark"> {{object.cliente}} </li>
+                <li class="list-group-item list-group-item-danger"> {{object.marca}} </li>
+                <h2>Equipo y Falla</h2>
+                <li class="list-group-item list-group-item-danger"> {{object.modelo}} </li>
+                <li class="list-group-item list-group-item-danger"> {{object.imei}} </li>
+                <li class="list-group-item list-group-item-danger"> {{object.falla}} </li>
+                <li class="list-group-item list-group-item-success"> {{object.comentarios}} </li>
+                <li class="list-group-item list-group-item-danger"> {{object.presupuesto}} </li>
+                <h5>Presupuesto</h5>
+                <li class="list-group-item list-group-item-danger"> {{object.pago_seña}} </li>
+                    <h5>Valor de Reparacion</h5>
+                        <li class="list-group-item list-group-item-info"> {{object.precio}} </li>
+                <li class="list-group-item list-group-item-danger"> {{object.estado}} </li>
+                    <p> Imagen de Equipo o Reparacion: </p>
+                {% if object.imagen %}
+                        
+                    <img src="{{ object.imagen.url }}"alt="" height="200px"/>
+                {% endif %}
+                       
+                        
+            </ul>
+        </div>
+                    
+                <div class="d-grid gap-2">
+                    <a class="btn btn-primary" href={% url 'listar_ingresos'%}>Volver a la lista</a>
+                </div>    
+    </div>
+</div>
+                    
+
+
+{% endblock %}
+
+
+    

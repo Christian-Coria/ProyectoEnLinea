@@ -70,7 +70,7 @@ ROOT_URLCONF = 'enlinea.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],      # Alternativa ...   'DIRS': [r'./templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -151,6 +151,10 @@ LOGIN_URL = 'django.contib.auth.views.login'
 ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
 REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
 SITE_ID = 1 # va a determinar cuantos sitios se utilizan en el registro ... siempre es uno solo para que no de error
+
+# Lineas agregadas por el ERROR en el registro:"ConnectionRefusedError at /accounts/register/"
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+ACCOUNT_EMAIL_VERIFICATION = "none"
 
 
 # UniTest

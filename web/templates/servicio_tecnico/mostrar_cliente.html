@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+Muestra de Cliente
+{% endblock %}
+
+{% block contenido %}
+<div class="container-fluid>">
+    <div class="row col-12">
+        <h1>DETALLE DE CLIENTE</h1>
+        </center>
+        <div class="p-3 mb-2 bg-dark text-white">
+            <ul class="list-grup">
+                
+                <li class='list-grup-item'> {{object.id}} </li>
+                <li class='list-grup-item'> {{object.nombre_completo}} </li>
+                <li class='list-grup-item'> {{object.telefono}} </li>
+            </ul>
+        </div>
+    </div>          
+    <div class="d-grid gap-2">
+        <a class="btn btn-primary" href={% url 'listar_clientes'%}>Volver a la lista</a>
+    </div>      
+</div>
+{% endblock %}

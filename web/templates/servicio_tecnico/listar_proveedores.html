@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+Lista de Proveedores
+{% endblock title%}
+
+{% block contenido %}
+<div class="container-fluid">
+    <div class="row col-12">
+        <a class="btn btn-secondary"<a href={% url 'listar_ingresos'  %}>Reparaciones</a>
+    
+            <div class="d-grid gap-2">
+                <a class="btn btn-primary" href={% url 'crear_proveedor'  %}>Crear proveedor</a>
+            <div>
+        <div class="p-3 mb-2 bg-dark text-white">
+            {% if object_list %}
+                <ul class="list-grup-item list-grup-flush">
+                    {% for proveedor in object_list %}
+                        {{proveedor.nombre}}
+                        <li class="list-grup-item">
+                            <a class="btn btn-primary"<a href={% url 'mostrar_proveedor' proveedor.id  %}>Mostrar proveedor</a>
+                            <a class="btn btn-success"<a href={% url 'editar_proveedor' proveedor.id  %}>Editar proveedor</a>
+                            <a class="btn btn-warning"<a href={% url 'eliminar_proveedor' proveedor.id  %}>Eliminar proveedor</a>
+                        </li>
+                    {% endfor %}
+    
+            {% else %}
+                <p> No hay Proveedores Registrados </p>
+            {% endif %}
+        </div>
+    </div>            
+</div>
+{% endblock %}

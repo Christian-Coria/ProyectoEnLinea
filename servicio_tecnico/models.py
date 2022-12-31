@@ -90,9 +90,7 @@ class Proveedores(models.Model):
         return f'Proveedor {self.nombre}: {self.telefono}'
 
         
-class TareasPendientes(models.Model):
-    titulo = models.CharField(max_length=100)
-    descripcion = models.TextField(blank=True)
 
-    def __str__(self):
-        return self.titulo
+class Task(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField(blank=True)

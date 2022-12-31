@@ -5,8 +5,8 @@
 		"../scss/header.scss"
 	],
 	"sourcesContent": [
-		"body{\n    background-color:red\n}\n"
+		"body{\n    background: linear-gradient(to bottom right,#24404d, #6dbff1,black);\n    color: #f1faee;\n}\n"
 	],
 	"names": [],
-	"mappings": ";AAAA,AAAA,IAAI,CAAA;EACA,gBAAgB,EAAC,GACrB;CAAC"
+	"mappings": ";AAAA,AAAA,IAAI,CAAA;EACA,UAAU,EAAE,yDAAuD;EACnE,KAAK,EAAE,OAAO;CACjB"
 }

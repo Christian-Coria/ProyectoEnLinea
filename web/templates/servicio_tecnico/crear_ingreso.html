@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %} 
+Crear ingreso de reparacion
+{% endblock title%}
+
+{% block contenido %}
+<div class="container-fluid>">
+    <div class="row col-12">
+        <h1>CARGA DE REPARACION</h1>
+        <div>
+            <form action={% url 'crear_ingreso' %}  method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table class="table table-dark table-striped">
+                    {{form.as_table}}
+                </table>
+                <center>
+                    <div class="d-grid gap-2">
+                            <button class="btn btn-danger"> ==> INGRESAR REPARACION <==</button> <a class="btn btn-primary" href={% url 'listar_ingresos'%}>Volver a la lista</a>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

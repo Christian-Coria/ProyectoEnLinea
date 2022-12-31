@@ -2,7 +2,7 @@ from django.contrib import admin
 from servicio_tecnico.models import Cliente
 from servicio_tecnico.models import Reparacion
 from servicio_tecnico.models import Proveedores
-from servicio_tecnico.models import TareasPendientes
+from servicio_tecnico.models import Task
 
 class ReparacionInLine(admin.TabularInline):
     model = Reparacion
@@ -46,4 +46,3 @@ admin.site.register(Cliente,ClienteAdmin)
 
 #admin.site.register(Reparacion,ReparacionAdmin )
 admin.site.register(Proveedores)
-admin.site.register(TareasPendientes)

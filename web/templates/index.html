@@ -1,11 +1,346 @@
-{% extends "layout.html" %}
-{% load static %}
 
-{% block contenedor %}
+{% extends "base.html" %}
+{% load i18n %}
+{% block contenido %}
 
+<!-- **************************************************************************
+*          NAV
+****************************************************************************-->
+    <div class="container-fluid">
+        <div class="row p-0">
+            <div class="col-12 p-0">
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary fs-5">
+                  <div class="col-sm">
+                    <a class="navbar-brand flex-grow-1" style="text-align: center; color: #fff; margin-left: 25px">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/512/5129/5129597.png"
+                        height="70"
+                        alt="EnLinea"
+                        loading="lazy"
+                      />
+                     
+                    </a>
+                  </div class="collapse navbar-collapse">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        {% if request.user.is_authenticated %}
+                     
+                        <li class="nav-item">
+                          <a class="nav-link" href={% url 'crear_ingreso' %}>Ingreso Reparacion</a>
+                        <li class="nav-item">
+                          <a class="nav-link" href={% url 'crear_proveedor' %}>Proveedores</a>
+                        </li>
+                      </li><li class="nav-item">
+                        <a class="nav-link" href={% url 'crear_cliente' %}>Crear cliente</a>
+                      </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href={% url 'buscar' %}>buscar</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                          <a class="nav-link" href={% url 'index' %}>
+                            {% if request.user.masdatosusuario.imagen %}
+                            <img src={{request.user.Datosusuario.imagen.url}} alt="" height="20px">
+                            {% endif%}
+                            {{request.user.username}}</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href={% url 'auth_logout' %}>Cerrar Sesion</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                          <a class="nav-link active" href={% url 'auth_login' %}>Ingresar</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" href={% url 'registration_register' %}>Registrarse</a>
+                        </li>
+                        {% endif %}
+                       
+                  </div>
+                </nav>
+              <!-- Navbar -->
+            </div>
+        </div>
+    </nav>
+
+<!-- **************************************************************************
+*          HEADER
+****************************************************************************-->
+    <header class="container">
+        <div class="row >
+            <div class="col-12 col-sm-6 col-md-3" style="padding: 20px 20px" >
+              <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="/media/desarrollo/baner1.png" class="d-block w-100" alt="Baner Precentacion de tienda">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/media/desarrollo/baner2.png" class="d-block w-100" alt="Baner de envios a todo el pais">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/media/desarrollo/baner3.png" class="d-block w-100" alt="Baner Precentacion de tienda 2">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+        </div>
+    </header>
+
+<!-- **************************************************************************
+*          MAIN SECTION
+****************************************************************************-->
+<main class="container">
+  <section class="row">
+      <div class="col"style="padding: 20px 20px" >
+        <div class="card-group">
+          <div class="card p-3 mb-2 border border-dark card text-white bg-danger text-center">
+            <img src="/media/desarrollo/admin3.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title fs-2">Administra Tu Negocio y/o Servicio Tecnico</h5>
+              <p class="card-text fw-bold text-center text-white">Podrá administrar sus clientes, entregar ordenes de reparacion
+                , controlar inventario entre otras funciones.</p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-dark mb-4" href={% url 'index' %}>Saber mas...</a>
+                </div> 
+            </div>
+          </div>
+          <div class="card p-3 mb-2 border border-dark card text-white bg-primary text-center">
+            <img src="/media/desarrollo/repuestos.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title fs-2">Tienda en Linea de Repuestos, Herramentas y Accesorios</h5>
+              <p class="card-text fw-bold text-center text-white">Accede a Tienda de Repuestos, Accesorios y Herramientas para el Gremio.</p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-dark mb-4" href={% url 'index' %}>Ingresar</a>
+                </div> 
+            </div>
+          </div>
+          <div class="card p-3 mb-2 border border-dark card text-dark bg-warning text-center">
+            <img src="/media/desarrollo/compra-venta.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title fs-2">Publica tus Clasificados de articulos usados </h5>
+              <p class="card-text fw-bold text-center text-black">Publica Tus Repuestos, equipos Usados, Herramientas, accesorios Usados 
+              como tambien tus servicios de experto en alguna area.</p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-dark mb-4" href={% url 'index' %}>Ingresar</a>
+                </div> 
+            </div>
+          </div>
+        </div>
+          </div>
+      </div>
+  </section>
+</main>
+
+<!-- **************************************************************************
+*          SECTION
+****************************************************************************-->
+    <section class="container">
+        <div class="row">
+            <div class="col-12" style="padding: 20px 20px 30px 20px">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="card card text-dark bg-info mb-3">
+                    <div class="card-body">
+                      <h5 class="card-title text-center fs-2">Pedidos y Cotizaciones especiales</h5>
+                      <p class="card-text text-center text-black">Solicita Presupuestos especiales o realiza consultas</p>
+                      <div class="d-grid gap-2">
+                       <a href="#" class="btn btn-primary mb-4">Contactanos</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card card text-white bg-success mb-3">
+                    <div class="card-body">
+                      <h5 class="card-title text-center fs-2">Curso de Reparacion de Celulares</h5>
+                      <p class="card-text text-center text-black">Aprenda a Detectar y resolver fallas en sus equipos celulares y tablets.</p>
+                      <div class="d-grid gap-2">
+                        <a href="#" class="btn btn-primary mb-4">Saber mas...</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+      <div class="row">
+       formulario pendiente
+    </section>  
     
-    
+<!-- **************************************************************************
+*          FOOTER
+****************************************************************************-->
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="container-fluid my-5" >
+
+  <!-- Footer -->
+  <footer
+          class="text-center text-lg-start text-white"
+          style="background-color: #1c2331"
+          >
+    <!-- Section: Social media -->
+    <section
+             class="d-flex justify-content-between p-4"
+             style="background-color: #6351ce"
+             >
+      <!-- Left -->
+      <div class="me-5">
+        <span>Conectate a nuestras redes:</span>
+      </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
         
-        <h1> Holaaaaaaa </h1>
-        {{ nombre_sitio }}
-{% endblock %}
+        <a href="" class="text-white me-4">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" aria-labelledby="twitter"><title id="twitter">Twitter</title><path id="icntwitter" fill="#FFFFFF" 
+            d="M25.284,11.305c-0.177,8.058-5.256,13.662-12.963,14.013c-3.152,0.176-5.43-0.875-7.531-2.102c2.277,0.351,5.254-0.525,6.831-1.927c-2.277-0.175-3.679-1.401-4.379-3.327c0.7,0.174,1.401,0,1.927,0c-2.102-0.701-3.504-1.928-3.679-4.73c0.525,0.35,1.227,0.525,1.928,0.525C5.841,12.881,4.79,9.553,6.016,7.451c2.277,2.452,5.08,4.554,9.634,4.904c-1.227-4.904,5.43-7.532,8.059-4.203c1.225-0.176,2.101-0.701,2.978-1.051c-0.352,1.226-1.052,1.927-1.928,2.627c0.876-0.175,1.751-0.35,2.452-0.701C27.035,9.903,26.159,10.604,25.284,11.305z"/></svg>
+        </a>
+        <a href="" class="text-white me-4">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" aria-labelledby="instagram"><title id="instagram">Instagram</title><g id="icninstagram"><path fill="#FFFFFF" 
+            d="M16,10.295c-3.146,0-5.705,2.56-5.705,5.705s2.56,5.705,5.705,5.705s5.705-2.56,5.705-5.705S19.146,10.295,16,10.295z M16,19.295c-1.816,0-3.295-1.479-3.295-3.295s1.479-3.294,3.295-3.294s3.294,1.478,3.294,3.294S17.816,19.295,16,19.295z"/><circle fill="#FFFFFF" cx="21.889" cy="10.125" r="1.35"/><path fill="#FFFFFF" d="M21.488,4.924H10.512c-3.081,0-5.588,2.507-5.588,5.588v10.977c0,3.081,2.507,5.588,5.588,5.588h10.977c3.081,0,5.588-2.507,5.588-5.588V10.512C27.076,7.431,24.569,4.924,21.488,4.924z M24.665,21.488c0,1.752-1.425,3.177-3.177,3.177H10.512c-1.751,0-3.177-1.425-3.177-3.177V10.512c0-1.751,1.426-3.177,3.177-3.177h10.977c1.752,0,3.177,1.426,3.177,3.177V21.488z"/></g></svg>
+        </a>
+        <a href="" class="text-white me-4">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" aria-labelledby="facebook"><title id="facebook">Facebook</title><path id="icnfacebook" fill="#FFFFFF" 
+            d="M20.653,16.009h-3.045c0,4.865,0,10.853,0,10.853h-4.512c0,0,0-5.93,0-10.853h-2.145v-3.836h2.145v-2.48c0-1.777,0.845-4.554,4.553-4.554l3.344,0.013v3.724c0,0-2.031,0-2.426,0c-0.396,0-0.957,0.197-0.957,1.045v2.254h3.438L20.653,16.009z"/></svg>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+              <path d="M21 29.5a1.5 1.5 0 00-3 0v4a1.5 1.5 0 003 0v-4zm9 0a1.5 1.5 0 00-3 0v4a1.5 1.5 0 003 0v-4z">
+
+              </path><path d="M34.895 8.939c1.89.602 3.378 1.472 4.41 2.73 1.397 1.703 1.736 3.837 1.55 6.19l.016.032 1.684 3.79.964.193a3.5 
+              3.5 0 012.161 1.398l1.668 2.335c.424.593.652 1.304.652 2.033v4.86c0 1.058-.619 1.973-1.129 2.585-.56.673-1.273 1.308-1.934 1.836a26.616
+               26.616 0 01-2.597 1.824l-.048.029h-.001l-.012.008-.021.014-.058.035c-.445.27-.898.528-1.358.773a37.655 37.655 0 01-3.883 
+               1.79C33.69 42.69 29.123 44 24 44c-5.123 0-9.69-1.311-12.959-2.605a38.197 
+               38.197 0 01-3.884-1.79c-.46-.245-.912-.503-1.357-.773l-.08-.05-.011-.007-.001-.001-.048-.03c-.041-.025-.1-.06-.173-.107a26.449 26.449 0 01-2.424-1.716c-.66-.528-1.373-1.163-1.934-1.836C.619 34.473 0 
+               33.558 0 32.5v-4.86c0-.729.228-1.44.652-2.033l1.668-2.335a3.5 3.5 0 012.161-1.398l.964-.193 1.684-3.79.015-.032c-.185-2.353.154-4.487 1.55-6.19 1.033-1.258 2.52-2.128 4.411-2.73C15.84 6.82 19.71 5.5 24 5.5c4.29 0 
+               8.16 1.321 10.895 3.439zM23.643 20.5v-.001a8.385 8.385 0 01-.946 1.894c-1.263 1.866-3.286 3.044-6.18 3.297-3.115.273-5.498-.171-7.111-1.707a5.848 5.848 0 01-1.077-1.405l-.329.74v13.328c.163.092.353.197.569.312a35.355 35.355 0 003.577 1.647C15.19 39.811 19.373 41 24 41c4.627 0 
+               8.809-1.189 11.854-2.394a35.238 35.238 0 003.576-1.647c.217-.115.407-.22.57-.312V23.32l-.329-.74a5.842 5.842 0 01-1.078 1.404c-1.612 1.536-3.995 1.98-7.11 1.707-2.894-.253-4.917-1.431-6.18-3.297a8.427 8.427 0 01-.946-1.894h-.714zm-12.514.907c.107.152.222.286.346.404.675.643 1.966
+                1.138 4.78.892 2.139-.187 3.277-.985 3.958-1.99.067-.1.131-.203.192-.31.607-1.067.897-2.504.968-4.242.095-2.367-.35-3.664-1.021-4.309-.623-.599-1.877-1.034-4.506-.514-2.668.527-4.082 1.322-4.832 2.235-.721.88-1.047 2.144-.869 4.174.157 1.796.474 2.934.984 
+                3.66zm26.679-3.183c.017-.154.033-.313.047-.478.178-2.03-.148-3.294-.869-4.174-.75-.913-2.164-1.708-4.832-2.235-2.629-.52-3.883-.085-4.506.514-.671.645-1.116 1.942-1.021 4.31.071 1.737.361 3.174.968 4.24a4.7 4.7 0 00.192.31c.638.943 1.679 1.703 3.568 1.948.129.017.259.031.389.043 
+                2.111.184 3.365-.047 4.145-.447.26-.133.467-.285.636-.445.662-.63 1.073-1.711 1.283-3.586zM22.5 17a1 1 0 001 1h1a1 1 0 000-2h-1a1 1 0 00-1 1z"></path></svg>
+                <h6 class="fst-italic">EnLinea.com</h6>
+                <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+             Somos una empresa dinámica y con trayectoria, cuyo objetivo es brindar soluciones integrales en el área de telefonía 
+             celular Insumos y accesorios y servicios tecnológicos tanto a individuos como a medianas y grandes empresas.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Productos</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="#!" class="text-white">Repuestos</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Accesorios</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Herramientas</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Cursos</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Links</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a class="nav-link active" href={% url 'registration_register' %}>Registrarse</a>
+            </p>
+            <p>
+                <a class="nav-link active" href={% url 'about' %}>Quienes Somos</a>
+            </p>
+            <p>
+                <a class="nav-link active" href={% url 'contacto' %}>Contacto</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Reglamento</a> <!-- en proceso -->
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Contacto</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p><i class="fas fa-home mr-3"></i> Rioja 180, Centro Cordoba Capital</p>
+            <p><i class="fas fa-envelope mr-3"></i> desbloqueoenlinea@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i>+549 3515205342</p>
+            
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2023 Copyright:
+      <a class="text-white" href="https://EnLinea.com/"
+         >EnLinea.com</a
+        >
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+</div>
+<!-- End of .container -->
+    
+{% endblock  %}

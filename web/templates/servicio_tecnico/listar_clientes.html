@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+Lista de Clientes
+{% endblock %}
+
+{% block contenido %}
+
+        <div class="d-grid gap-2">
+            <a class="btn btn-primary" href={% url 'crear_cliente'  %}>Crear cliente</a>
+        </div>
+<div class="container-fluid">
+    <div class="row col-12">
+            <div class="p-3 mb-2 bg-dark text-white">
+                {% if object_list %}
+                    <ul class="list-grup-item list-grup-flush">
+                {% for cliente in object_list %}
+                    {{cliente.nombre}}
+                    <li class="list-grup-item">
+                        <a class="btn btn-primary"<a href={% url 'mostrar_cliente' cliente.id %}>Mostrar cliente</a>
+                        <a class="btn btn-success"<a href={% url 'editar_cliente' cliente.id %}>Editar cliente</a>
+                        <a class="btn btn-warning"<a href={% url 'eliminar_cliente' cliente.id %}>Eliminar cliente</a>
+                    </li>
+                {% endfor %}
+            </div>
+                {% else %}
+                    <p> No hay Clientes Registrados </p>
+                {% endif%}
+    </div>
+</div>              
+
+{% endblock %}
