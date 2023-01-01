@@ -146,15 +146,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #agregar estas lineas para Redux User
-LOGIN_REDIRECT_URL = ' '   #indicamos a donde debe dirigirse en el momento en que se loguee
-LOGIN_URL = 'django.contib.auth.views.login'
+LOGIN_REDIRECT_URL = 'index'   #indicamos a donde debe dirigirse en el momento en que se loguee
+LOGIN_URL = 'django.contib.auth.views.login'   #'/accounts/login/' 
 ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
 REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
 SITE_ID = 1 # va a determinar cuantos sitios se utilizan en el registro ... siempre es uno solo para que no de error
 
 # Lineas agregadas por el ERROR en el registro:"ConnectionRefusedError at /accounts/register/"
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-ACCOUNT_EMAIL_VERIFICATION = "none"
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#ACCOUNT_EMAIL_VERIFICATION = "none"
 
 
 # UniTest

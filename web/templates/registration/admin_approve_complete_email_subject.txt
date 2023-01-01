@@ -1,21 +1,13 @@
-{% extends "registration/registration_base.html" %}
-{% load i18n %}
-
-{% block title %}{% trans "Account Approved" %}{% endblock %}
-
-{% block content %}
-<p>
-    {% trans "The user's account is now approved." %}
-</p>
-{% endblock %}
+{% load i18n %}{% trans "Account activation on" %} {{ site.name }}
 
 
 {% comment %}
-**registration/admin_approve_complete.html**
+**registration/admin_approve_complete_email_subject.txt**
 
-Used to generate the html body of the admin activation email. Should display a
-link for an admin to approve activation of the account. This template has the
-following context:
+Used to generate the subject line of the admin approval complete email. Because 
+the subject line of an email must be a single line of text, any output
+from this template will be forcibly condensed to a single line before
+being used. This template has the following context:
 
 ``site``
     An object representing the site on which the user registered;
@@ -26,8 +18,4 @@ following context:
     documentation for the Django sites framework
     <http://docs.djangoproject.com/en/dev/ref/contrib/sites/>`_ for
     details regarding these objects' interfaces.
-
-``user``
-    The new user account
-
 {% endcomment %}

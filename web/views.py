@@ -9,3 +9,6 @@ class Contacto(TemplateView):
 
 class About(TemplateView):
     template_name = "about.html"
+
+class Construccion(TemplateView):
+    template_name = "en_construccion.html"

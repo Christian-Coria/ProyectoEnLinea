@@ -4,17 +4,12 @@
 {% block title %}{% trans "Account Activation Resent" %}{% endblock %}
 
 {% block content %}
-<div class="container-fluid>">
-  <div class="row col-12">
-    <p>
-      {% blocktrans %}
-      We have sent an email to {{ email }} with further instructions.
-      {% endblocktrans %}
-    </p>
-    {% endblock %}
-  </div>
-</div>
-
+<p>
+  {% blocktrans %}
+  We have sent an email to {{ email }} with further instructions.
+  {% endblocktrans %}
+</p>
+{% endblock %}
 
 
 {% comment %}
