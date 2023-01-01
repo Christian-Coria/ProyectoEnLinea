@@ -13,20 +13,15 @@ from django.core.paginator import Paginator
 
 
 
-
 def buscar(request):
+
     if 'q' in request.GET:
         q = request.GET['q']
-        all_reparacion_list = Reparacion.objects.filter(Q(cliente__icontains=q)).order_by('cliente',
-        Q(imei__icontains=q)).order_by('imei')
+        all_reparacion_list = Reparacion.objects.filter(Q(cliente__nombre_completo__icontains=q)).order_by('cliente')
+        
     else:
-        all_reparacion_list = Reparacion.objects.all().order_by('cliente')
-        all_reparacion_list = Reparacion.objects.all().order_by('imei')
-
-    paginator = Paginator(all_reparacion_list, 2)        #revisar codigo hasta que sea correcto el Paginator
-    page = request.GET.get('page')   
-    all_ingresos = paginator.get_page(page)
-
+        all_reparacion_list = Reparacion.objects.all().order_by('cliente')                
+        
     return render(request, 'servicio_tecnico/buscar.html', {"reparacion":all_reparacion_list})
 
 
