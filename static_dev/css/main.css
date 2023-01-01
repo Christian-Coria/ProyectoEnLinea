@@ -14471,9 +14471,10 @@ fieldset:disabled .btn {
 
 /* line 1, ../../ProyectoEnLinea/static_dev/scss/header.scss */
 body {
-  background: linear-gradient(to bottom right, #212324, #24333c, black);
-  color: #0e170b;
+  background: black;
+  
 }
+
 div.imagen{
   width: 100%;
   position: relative;
@@ -14494,4 +14495,3 @@ div.imagen{
 
 /*# sourceMappingURL=main.css.map */
 
-.yutest {     padding-left: 12%;     text-align: left;     /*border: solid 1px black;*/ }

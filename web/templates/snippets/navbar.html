@@ -1,0 +1,60 @@
+<!-- **************************************************************************
+*          NAV
+****************************************************************************-->
+<div class="container-fluid">
+    <div class="row p-0">
+        <div class="col-12 p-0">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary fs-5">
+              <div class="col-sm">
+                <a class="navbar-brand flex-grow-1" style="text-align: center; color: #fff; margin-left: 25px">
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/5129/5129597.png"
+                    height="70"
+                    alt="EnLinea"
+                    loading="lazy"
+                  />
+                 
+                </a>
+              </div class="collapse navbar-collapse">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    {% if request.user.is_authenticated %}
+                 
+                    <li class="nav-item">
+                      <a class="nav-link" href={% url 'crear_ingreso' %}>Ingreso Reparacion</a>
+                    <li class="nav-item">
+                      <a class="nav-link" href={% url 'crear_proveedor' %}>Proveedores</a>
+                    </li>
+                  </li><li class="nav-item">
+                    <a class="nav-link" href={% url 'crear_cliente' %}>Crear cliente</a>
+                  </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href={% url 'buscar' %}>buscar</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                      <a class="nav-link" href={% url 'index' %}>
+                        {% if request.user.masdatosusuario.imagen %}
+                        <img src={{request.user.Datosusuario.imagen.url}} alt="" height="20px">
+                        {% endif%}
+                        {{request.user.username}}</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href={% url 'auth_logout' %}>Cerrar Sesion</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link active" href={% url 'auth_login' %}>Ingresar</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href={% url 'registration_register' %}>Registrarse</a>
+                    </li>
+                    {% endif %}
+                   
+              </div>
+            </nav>
+            
+          <!-- Navbar -->
+        </div>
+    </div>
+</nav>

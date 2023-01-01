@@ -6,13 +6,13 @@ Crear ingreso de reparacion
 {% endblock title%}
 
 {% block contenido %}
-<div class="container-fluid>">
-    <div class="row col-12">
-        <h1>CARGA DE REPARACION</h1>
+<div class="container m-4 border-radius">
+    <div class="col-md-6 mx-auto text-center fst-italic" style="background-color: rgb(177, 172, 172)">
+        <h4 style="fs-3 lh-1" style="color:$indigo-700">Carga de Reparacion</h4>
         <div>
             <form action={% url 'crear_ingreso' %}  method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                <table class="table table-dark table-striped">
+                <table class="table table-primary table-striped sm-10">
                     {{form.as_table}}
                 </table>
                 <center>
