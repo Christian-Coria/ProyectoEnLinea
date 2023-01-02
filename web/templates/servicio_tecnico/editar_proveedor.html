@@ -5,10 +5,10 @@ Editar Proveedor
 {% endblock title%}
 
 {% block content %}
-<div class="container-fluid>">
-    <div class="row col-12">
+<div class="container m-4 border-radius">
+    <div class="col-md-6 mx-auto text-center fst-italic" style="background-color: rgb(177, 172, 172)">
         <div class="d-grid gap-2">
-            <a class="btn btn-primary" href={% url 'listar_proveedores'%}>Volver a la lista</a>
+            <a class="btn btn-primary m-2" href={% url 'listar_proveedores'%}>Volver a la lista</a>
         </div> 
     </br>
         <div>
@@ -19,7 +19,7 @@ Editar Proveedor
                 </table>
                 
                     <div class="d-grid gap-2">
-                            <button class="btn btn-danger">EDITAR PROVEEDOR</button> 
+                            <button class="btn btn-danger m-2">EDITAR PROVEEDOR</button> 
                     </div>
             </form>
         </div>

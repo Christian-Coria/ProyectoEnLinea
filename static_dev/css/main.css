@@ -14475,4 +14475,14 @@ body {
   color: #f1faee;
 }
 
+footer{
+ 
+  
+  margin: 0%;
+  padding: 0%;
+}
+
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
 /*# sourceMappingURL=main.css.map */

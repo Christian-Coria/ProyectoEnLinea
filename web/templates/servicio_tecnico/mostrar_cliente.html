@@ -5,21 +5,20 @@ Muestra de Cliente
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid>">
-    <div class="row col-12">
-        <h1>DETALLE DE CLIENTE</h1>
-        </center>
-        <div class="p-3 mb-2 bg-dark text-white">
-            <ul class="list-grup">
-                
-                <li class='list-grup-item'> {{object.id}} </li>
-                <li class='list-grup-item'> {{object.nombre_completo}} </li>
-                <li class='list-grup-item'> {{object.telefono}} </li>
-            </ul>
-        </div>
-    </div>          
-    <div class="d-grid gap-2">
-        <a class="btn btn-primary" href={% url 'listar_clientes'%}>Volver a la lista</a>
-    </div>      
-</div>
+<div class="container m-4 border-radius p-1 m-1">
+        <div class="col-md-6 mx-auto text-center fst-italic" style="background-color: rgb(177, 172, 172)">
+            <h1>DETALLE DE CLIENTE</h1>
+            </center>
+            <div class="p-3 mb-2 bg-dark text-white ">
+                <ul >
+                    <li class='list-grup-item'> {{object.id}} </li>
+                    <li class='list-grup-item'> {{object.nombre_completo}} </li>
+                    <li class='list-grup-item'> {{object.telefono}} </li>
+                </ul>
+            </div>
+            <div class="d-grid gap-2">
+                <a class="btn btn-primary m-2" href={% url 'listar_clientes'%}>Volver a la lista</a>
+            </div>  
+        </div>    
+    </div>
 {% endblock %}

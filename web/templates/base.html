@@ -14,15 +14,17 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.main.css' %}" />	
 	   	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
 	</head>
+	{% include 'snippets/navbar.html' %}
 	<body>
-		{% include 'snippets/navbar.html' %}
+		
 
 		{% block content %}
 		
 		{% endblock %}
 		
-		{% include 'snippets/footer.html' %}
+		
 	</body>
+	{% include 'snippets/footer.html' %}
 </html>
 
 

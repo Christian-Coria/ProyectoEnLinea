@@ -1,25 +1,22 @@
-{% extends 'base.html' %}
-
-{% block title %} 
-Contacto
-{% endblock title%}
-
+{% extends 'base.html' %} {% block title %} Contacto {% endblock title%} 
 {% block content %}
-
-
 
 <section class="py-5 text-center container">
   <div class="row py-lg-5">
-    <section class="text-center text-light">
+    <div class="text-center text-light">
       <h3 class="mb-5">Contactanos</h3>
-    
+
       <div class="row">
         <div class="col-lg-5">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.1221926980475!2d-64.18673478515836!3d-31.410759303122223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329878393beb69%3A0xe59836ee36fa57ac!2sLa%20Rioja%20180%2C%20X5022%20FRC%2C%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1659284358446!5m2!1ses-419!2sar"
-            class="h-100 w-100" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            class="h-100 w-100"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
         </div>
-    
+
         <div class="col-lg-7">
           <form>
             <div class="row">
@@ -27,14 +24,26 @@ Contacto
                 <div class="row mb-4">
                   <div class="col-md-6 mb-4 mb-md-0">
                     <div class="form-outline">
-                      <input type="text" id="form3Example1" class="form-control" />
-                      <label class="form-label" for="form3Example1">Nombre</label>
+                      <input
+                        type="text"
+                        id="form3Example1"
+                        class="form-control"
+                      />
+                      <label class="form-label" for="form3Example1"
+                        >Nombre</label
+                      >
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-outline">
-                      <input type="email" id="form3Example2" class="form-control" />
-                      <label class="form-label" for="form3Example2">Email</label>
+                      <input
+                        type="email"
+                        id="form3Example2"
+                        class="form-control"
+                      />
+                      <label class="form-label" for="form3Example2"
+                        >Email</label
+                      >
                     </div>
                   </div>
                 </div>
@@ -43,7 +52,11 @@ Contacto
                   <label class="form-label" for="form3Example3">Asunto</label>
                 </div>
                 <div class="form-outline mb-4">
-                  <textarea class="form-control" id="form4Example3" rows="4"></textarea>
+                  <textarea
+                    class="form-control"
+                    id="form4Example3"
+                    rows="4"
+                  ></textarea>
                   <label class="form-label" for="form4Example3">Mesnsaje</label>
                 </div>
                 <div class="text-center text-md-start">
@@ -56,7 +69,11 @@ Contacto
                 <ul class="list-unstyled">
                   <li>
                     <i class="fas fa-map-marker-alt fa-2x text-primary"></i>
-                    <p><small>Rioja 180,Cordoba Capital, Centro, Argentina</small></p>
+                    <p>
+                      <small
+                        >Rioja 180,Cordoba Capital, Centro, Argentina</small
+                      >
+                    </p>
                   </li>
                   <li>
                     <i class="fas fa-phone fa-2x text-primary"></i>
@@ -67,19 +84,12 @@ Contacto
                     <p><small>desbloqueoenlinea@gmail.com</small></p>
                   </li>
                 </ul>
-                
               </div>
             </div>
           </form>
-    
         </div>
       </div>
-    
-    
-    </section>
-    
-      
+    </div> 
+  </div>
+</section>
 {% endblock %}
-
-
-
