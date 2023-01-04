@@ -7,38 +7,28 @@ Lista de Proveedores
 {% block content %}
 <div class="container-fluid">
     <div class="row col-12">
-       
-    
-            <div class="d-grid gap-2">
-                <a class="btn btn-primary m-2" href={% url 'crear_proveedor'  %}>Crear proveedor</a>
+                   
+        <h4>Lista de Proveedores</h4>
+        {% if object_list %}
+        <div class="container mt-3 p-5"> 
+            <div class="row col-7">   
+            <ul class="list-grup">
+                <ul class="list-group list-group-horizontal-sm ">
+                    {% for proveedor in object_list %}
+                    <li class="list-group-item list-group-item-danger">{{proveedor.nombre}}</li>
+                    <a class="btn btn-primary"<a href={% url 'mostrar_proveedor' proveedor.id  %}>Mostrar proveedor</a>
+                    <a class="btn btn-success"<a href={% url 'editar_proveedor' proveedor.id  %}>Editar proveedor</a>
+                    <a class="btn btn-warning"<a href={% url 'eliminar_proveedor' proveedor.id  %}>Eliminar proveedor</a>
+                    {% endfor %}
+                </ul>          
+            </ul>
             </div>
-                    <div class="container  border">
-                        <div class="col-12 mx-auto text-center fst-italic" ">
-                    
-                        {% if object_list %}
-                                <div class="container mt-3">    
-                                    <ul class="list-grup">
-                                        {% for proveedor in object_list %}
-                                            {{proveedor.nombre}}
-                                            <li class="list-grup-item row">
-                                                <div class="container m-4">
-                                                    <div class="col-md-6 mx-auto text-center fst-italic p-2" style="background-color: rgb(0, 0, 50)">
-                                                        <a class="btn btn-primary"<a href={% url 'mostrar_proveedor' proveedor.id  %}>Mostrar proveedor</a>
-                                                        <a class="btn btn-success"<a href={% url 'editar_proveedor' proveedor.id  %}>Editar proveedor</a>
-                                                        <a class="btn btn-warning"<a href={% url 'eliminar_proveedor' proveedor.id  %}>Eliminar proveedor</a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                    
-                        {% else %}
-                            <p> No hay Proveedores Registrados </p>
-                        {% endif %}
-                        </div>
-                    </div>
-        
-    </div>            
+        </div>
+
+        {% else %}
+            <p> No hay Clientes Registrados </p>
+        {% endif%}
+    </div>
 </div>
+
 {% endblock %}

@@ -12,30 +12,32 @@ Lista de ingresos
     <a class="btn btn-warning" href={% url 'listar_proveedores'  %}>Lista de Proveedores</a>
 </div>
     
-    <div>
-        <div class="container  border">
-            <div class="col-12 mx-auto text-center fst-italic" ">
-        
-            {% if object_list %}
-                    <div class="container mt-3">    
-                        <ul class="list-grup">
-                            {% for ingreso in object_list %}
-                                {{ingreso.cliente}}
-                                <li class="list-grup-item row">
-                                    <div class="container m-4">
-                                        <div class="col-md-6 mx-auto text-center fst-italic p-2" style="background-color: rgb(0, 0, 50)">
-                                    <a class="btn btn-primary"<a href={% url 'mostrar_ingreso' ingreso.id  %}>Mostrar ingreso</a>
-                                    <a class="btn btn-success"<a href={% url 'editar_ingreso' ingreso.id  %}>Editar ingreso</a>
-                                    <a class="btn btn-warning"<a href={% url 'eliminar_ingreso' ingreso.id  %}>Eliminar ingreso</a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-            {% else %}
-                    <p> No hay ingresos Registrados </p>
-            {% endif %}
+    
+
+
+<div class="container-fluid">
+    <div class="row col-12">
+                   
+        <h4>Lista de Reparaciones</h4>
+        {% if object_list %}
+        <div class="container mt-3 p-5"> 
+            <div class="row col-7">   
+            <ul class="list-grup">
+                <ul class="list-group list-group-horizontal-sm ">
+                    {% for ingreso in object_list %}
+                    <li class="list-group-item list-group-item-danger">{{ingreso.cliente}}</li>
+                    <a class="btn btn-primary"<a href={% url 'mostrar_ingreso' ingreso.id  %}>Mostrar ingreso</a>
+                    <a class="btn btn-success"<a href={% url 'editar_ingreso' ingreso.id  %}>Editar ingreso</a>
+                    <a class="btn btn-warning"<a href={% url 'eliminar_ingreso' ingreso.id  %}>Eliminar ingreso</a>  
+                    {% endfor %}
+                </ul>          
+            </ul>
+            </div>
         </div>
+
+        {% else %}
+            <p> No hay Reparaciones Registradas </p>
+        {% endif%}
     </div>
-               
 </div>
 {% endblock %}

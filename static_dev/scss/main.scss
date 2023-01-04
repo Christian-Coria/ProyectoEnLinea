@@ -1,5 +1,56 @@
+$principal:#4714d279;
+$primary: $principal;
+$secundario: #0f0f10a1;
+$dark: $secundario;
+$terciario: #e6db0ac4;
+$warning: $terciario;
+$principal2: #17b30679;
+$success: $principal2;
+$principal3: #0aa1ed79;
+$info: $principal3;
+$principal4: #beec2679;
+$danger: $principal4;
+
+
+
+$border-radius:               1rem !default;
+$enable-gradients:true;
+$btn-padding-y: .8rem;
+$btn-padding-x: 1.5rem;
+$btn-border-radius: 1rem;
+
+.d-flex img{
+    width: 330px;
+}
+
+
+
+
+
 @import "bootstrap/bootstrap";
 @import "variables";
 @import "header" ;
 
+.btn-primary {
+    border-bottom: 3px solid rgba(0,0,0,0.27);
+}
 
+
+body {
+    background: linear-gradient(to bottom right, #24404d, #6dbff1, black);
+    color: #f1faee;
+  }
+
+  #login .container #login-row #login-column #login-box {
+    margin-top: 120px;
+    max-width: 600px;
+    height: 320px;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+  }
+  #login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+  }
+  #login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+  }
