@@ -1,6 +1,7 @@
 /* line 22, ../../ProyectoEnLinea/static_dev/scss/main.scss */
 .d-flex img {
   width: 330px;
+  /*height: 350px;*/
 }
 
 /*!
@@ -39,7 +40,7 @@
   --bs-success: #17b30679;
   --bs-info: #0aa1ed79;
   --bs-warning: #e6db0ac4;
-  --bs-danger: #beec2679;
+  --bs-danger: rgba(146, 15, 240, 0.209);
   --bs-light: #f8f9fa;
   --bs-dark: #0f0f10a1;
   --bs-primary-rgb: 71, 20, 210;
@@ -47,7 +48,7 @@
   --bs-success-rgb: 23, 179, 6;
   --bs-info-rgb: 10, 161, 237;
   --bs-warning-rgb: 230, 219, 10;
-  --bs-danger-rgb: 190, 236, 38;
+  --bs-danger-rgb: 146.2, 15.3, 239.7;
   --bs-light-rgb: 248, 249, 250;
   --bs-dark-rgb: 15, 15, 16;
   --bs-primary-text: #0a58ca;
@@ -2423,13 +2424,13 @@ progress {
 /* line 3, ../../ProyectoEnLinea/static_dev/scss/bootstrap/mixins/_table-variants.scss */
 .table-danger {
   --bs-table-color: #000;
-  --bs-table-bg: rgba(250, 254, 239, 0.894902);
-  --bs-table-border-color: rgba(220, 223, 210, 0.905412);
-  --bs-table-striped-bg: rgba(235, 238, 224, 0.900157);
+  --bs-table-bg: rgba(252, 248, 255, 0.8418);
+  --bs-table-border-color: rgba(219, 215, 221, 0.85762);
+  --bs-table-striped-bg: rgba(235, 231, 238, 0.84971);
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: rgba(220, 223, 210, 0.905412);
+  --bs-table-active-bg: rgba(219, 215, 221, 0.85762);
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: rgba(227, 231, 217, 0.902784);
+  --bs-table-hover-bg: rgba(227, 223, 229, 0.853665);
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -3477,7 +3478,7 @@ textarea.form-control-lg {
 .was-validated .form-control:invalid, .form-control.is-invalid {
   border-color: var(--bs-danger);
   padding-right: calc(1.5em + 0.75rem);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23beec2679'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23beec2679' stroke='none'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='rgba%28146, 15, 240, 0.209%29'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='rgba%28146, 15, 240, 0.209%29' stroke='none'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right calc(0.375em + 0.1875rem) center;
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
@@ -3502,7 +3503,7 @@ textarea.form-control-lg {
 
 /* line 92, ../../ProyectoEnLinea/static_dev/scss/bootstrap/mixins/_forms.scss */
 .was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"], .form-select.is-invalid:not([multiple]):not([size]), .form-select.is-invalid:not([multiple])[size="1"] {
-  --bs-form-select-bg-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23beec2679'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23beec2679' stroke='none'/%3e%3c/svg%3e");
+  --bs-form-select-bg-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='rgba%28146, 15, 240, 0.209%29'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='rgba%28146, 15, 240, 0.209%29' stroke='none'/%3e%3c/svg%3e");
   padding-right: 4.125rem;
   background-position: right 0.75rem center, center right 2.25rem;
   background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
@@ -3745,20 +3746,20 @@ fieldset:disabled .btn {
 
 /* line 123, ../../ProyectoEnLinea/static_dev/scss/bootstrap/_buttons.scss */
 .btn-danger {
-  --bs-btn-color: #000;
-  --bs-btn-bg: #beec2679;
-  --bs-btn-border-color: #beec2679;
-  --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: rgba(214, 243, 117, 0.553333);
-  --bs-btn-hover-border-color: rgba(207, 241, 95, 0.527059);
-  --bs-btn-focus-shadow-rgb: 121, 151, 24;
-  --bs-btn-active-color: #000;
-  --bs-btn-active-bg: rgba(219, 244, 135, 0.579608);
-  --bs-btn-active-border-color: rgba(207, 241, 95, 0.527059);
+  --bs-btn-color: #fff;
+  --bs-btn-bg: rgba(146, 15, 240, 0.209);
+  --bs-btn-border-color: rgba(146, 15, 240, 0.209);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: rgba(58, 6, 95, 0.32765);
+  --bs-btn-hover-border-color: rgba(47, 5, 76, 0.3672);
+  --bs-btn-focus-shadow-rgb: 212, 160, 249;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: rgba(47, 5, 76, 0.3672);
+  --bs-btn-active-border-color: rgba(38, 4, 62, 0.40675);
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #beec2679;
-  --bs-btn-disabled-border-color: #beec2679;
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: rgba(146, 15, 240, 0.209);
+  --bs-btn-disabled-border-color: rgba(146, 15, 240, 0.209);
 }
 
 /* line 123, ../../ProyectoEnLinea/static_dev/scss/bootstrap/_buttons.scss */
@@ -3889,19 +3890,19 @@ fieldset:disabled .btn {
 
 /* line 149, ../../ProyectoEnLinea/static_dev/scss/bootstrap/_buttons.scss */
 .btn-outline-danger {
-  --bs-btn-color: #beec2679;
-  --bs-btn-border-color: #beec2679;
-  --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #beec2679;
-  --bs-btn-hover-border-color: #beec2679;
-  --bs-btn-focus-shadow-rgb: 190, 236, 38;
-  --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #beec2679;
-  --bs-btn-active-border-color: #beec2679;
+  --bs-btn-color: rgba(146, 15, 240, 0.209);
+  --bs-btn-border-color: rgba(146, 15, 240, 0.209);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: rgba(146, 15, 240, 0.209);
+  --bs-btn-hover-border-color: rgba(146, 15, 240, 0.209);
+  --bs-btn-focus-shadow-rgb: 146.2, 15.3, 239.7;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: rgba(146, 15, 240, 0.209);
+  --bs-btn-active-border-color: rgba(146, 15, 240, 0.209);
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #beec2679;
+  --bs-btn-disabled-color: rgba(146, 15, 240, 0.209);
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #beec2679;
+  --bs-btn-disabled-border-color: rgba(146, 15, 240, 0.209);
   --bs-gradient: none;
 }
 
@@ -8326,8 +8327,8 @@ fieldset:disabled .btn {
 
 /* line 6, ../../ProyectoEnLinea/static_dev/scss/bootstrap/helpers/_color-bg.scss */
 .text-bg-danger {
-  color: #000 !important;
-  background-color: RGBA(190, 236, 38, var(--bs-bg-opacity, 1)) !important;
+  color: #fff !important;
+  background-color: RGBA(146.2, 15.3, 239.7, var(--bs-bg-opacity, 1)) !important;
 }
 
 /* line 6, ../../ProyectoEnLinea/static_dev/scss/bootstrap/helpers/_color-bg.scss */
@@ -8394,12 +8395,12 @@ fieldset:disabled .btn {
 
 /* line 2, ../../ProyectoEnLinea/static_dev/scss/bootstrap/helpers/_colored-links.scss */
 .link-danger {
-  color: #beec2679 !important;
+  color: rgba(146, 15, 240, 0.209) !important;
 }
 
 /* line 6, ../../ProyectoEnLinea/static_dev/scss/bootstrap/helpers/_colored-links.scss */
 .link-danger:hover, .link-danger:focus {
-  color: rgba(219, 244, 135, 0.579608) !important;
+  color: rgba(47, 5, 76, 0.3672) !important;
 }
 
 /* line 2, ../../ProyectoEnLinea/static_dev/scss/bootstrap/helpers/_colored-links.scss */

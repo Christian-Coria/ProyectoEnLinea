@@ -5,80 +5,65 @@ Administracion Servicio Tecnico
 {% endblock title%}
 
 {% block content %}
-<center>
-</hr>
-<h4 class="text-uppercase ">Panel de Administracion</h4>
-</hr>
 
-    <!--**********************************************************************************
-    * seccion cards administracion
-**********************************************************************************************-->
-<div class="container-fluid">
-    <div class="col-12">
-        
+
+</hr>
+<p class="text-uppercase m-3 text-center fs-1" style="box-shadow: 0px 0px 10px 0px #333 inset;">Panel de Administracion</p>
+</hr>
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card shadow p-3 mb-5 bg-info rounded text-center text-dark text-uppercase">
+        <div class="card-body">
+          <h5 class="card-title fs-4">Seccion Clientes</h5>
+          <p class="card-text">ingresar el cliente si este aun no esta registrado</p>
+          <a href={% url 'crear_cliente' %} class="btn btn-primary d-grid gap-2">Ingresar Cliente</a>
+        </div>
+      </div>
     </div>
+    <div class="col-sm-6">
+      <div class="card shadow p-3 mb-5 bg-info rounded text-center text-dark text-uppercase">
+        <div class="card-body">
+          <h5 class="card-title fs-4">Seccion Reparaciones</h5>
+          <p class="card-text">Administra nuevas reparaciontext-center fs-4es.</p>
+          <a href={% url 'crear_ingreso' %} class="btn btn-primary d-grid gap-2">Ingresar Reparacion</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</br>
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card shadow p-3 mb-5 bg-info rounded text-center text-dark text-uppercase">
+        <div class="card-body">
+          <h5 class="card-title fs-4 ">Seccion Proveedores</h5>
+          <p class="card-text">Ingresa datos de tus Proveedores</p>
+          <a href={% url 'crear_proveedor' %} class="btn btn-primary d-grid gap-2">Ingresar Proveedor</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card shadow p-3 mb-5 bg-info rounded text-center text-dark text-uppercase">
+        <div class="card-body">
+          <h5 class="card-title fs-4">Administra Ingresos</h5>
+          <p class="card-text">Puedes ver detalles, editar o borrar tus Ingresos.</p>
+          <a href={% url 'listar_ingresos' %} class="btn btn-primary d-grid gap-2">Ingresar seccion</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-
-
-<section class="container-fluid p-1 m-auto ">
-    <div class="card text-center" style="color:black">
-        <div class="row">
-            <div class="col-sm-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Seccion clientes</h5>
-                  <p class="card-text">Recuerda siempre ingresar previamente el cliente si este aun no esta ingresado</p>
-                  <a href={% url 'crear_cliente' %} class="btn btn-primary">Ingresar Cliente</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Seccion Reparaciones</h5>
-                  <p class="card-text">Administra nuevas reparaciones.</p>
-                  <a href={% url 'crear_ingreso' %} class="btn btn-primary">Ingresar Reparacion</a>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
-</section>
-<section class="container-fluid p-1 m-auto ">
-    <div class="card text-center" style="color:black">
-        <div class="row">
-            <div class="col-sm-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Seccion Proveedores</h5>
-                  <p class="card-text">Ingresa datos de tus Proveedores</p>
-                  <a href={% url 'crear_proveedor' %} class="btn btn-primary">Ingresar Proveedor</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Administra Ingresos</h5>
-                  <p class="card-text">Puedes ver detalles, editar o borrar tus Ingresos.</p>
-                  <a href={% url 'listar_ingresos' %} class="btn btn-primary">Ingresar</a>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
-</section>
     <!--**********************************************************************************
     * seccion busqueda
 **********************************************************************************************-->
-            <div> <h3> Busqueda de Reparacion por Cliente </h3> </div>
+<p class="text-uppercase m-3 text-center fs-3" style="box-shadow: 0px 0px 10px 0px #333 inset;">Busqueda de reparacion por cliente</p>
 
 <section>
     <form>
-        <div class="input-group input-group-sm mb-3 mt-4">
+        <div class="input-group input-group-sm mb-3 mt-4 ">
             <input name="q" type="text" class="form-control" placeholder="buscar por Cliente">
             <button class="btn btn-secondary"><i class="fas fa-search"></i>Buscar</button>
             <a href={% url 'buscar' %}  class="btn btn-dark" style="margin-left: 2px;"><i class="fas fa-sync-alt"></i></a>
@@ -87,7 +72,7 @@ Administracion Servicio Tecnico
 
     </center>
         <table class="table table-bordered table-sm mt-4" style="text-align: center; fron-size: 14px; color: white">
-            <thead class="table-danger">
+            <thead class="table-info">
                 <tr>
                     <th>Orden</th>
                     <th>Fecha</th>

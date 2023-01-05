@@ -6,7 +6,7 @@ from django.contrib import admin
 from servicio_tecnico.views import ( buscar, ListarClientes,
 CrearCliente, CrearProveedor, EliminarCliente, EditarCliente,EditarProveedor,EliminarProveedor,
 MostrarCliente,MostrarProveedor,ListarProveedores, EliminarIngreso, 
-MostrarIngreso,EditarIngreso,CrearIngreso, ListarIngresos)
+MostrarIngreso,EditarIngreso,CrearIngreso, ListarIngresos, ClienteMin, CheckImei, Actualizacion)
 
 
 
@@ -17,6 +17,11 @@ urlpatterns = [
     path('listar-ingresos' , ListarIngresos.as_view(), name='listar_ingresos'),
 
     path('buscar/', buscar, name="buscar"),
+    path('presupuesto' , ClienteMin.as_view(), name='presupuesto'),
+    path('chreck_imei' , CheckImei.as_view(), name='check_imei'),
+    path('actualizacion' , CheckImei.as_view(), name='actualizacion'),
+
+
     
     path('crear-cliente' , CrearCliente.as_view(), name='crear_cliente'),                
     path('crear-proveedor' , CrearProveedor.as_view(), name='crear_proveedor'),    

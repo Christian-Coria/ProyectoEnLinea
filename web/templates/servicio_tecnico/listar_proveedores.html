@@ -16,7 +16,7 @@ Lista de Proveedores
                 <ul class="list-group list-group-horizontal-sm ">
                     {% for proveedor in object_list %}
                     <li class="list-group-item list-group-item-danger">{{proveedor.nombre}}</li>
-                    <a class="btn btn-primary"<a href={% url 'mostrar_proveedor' proveedor.id  %}>Mostrar proveedor</a>
+                    <a class="btn btn-primary ms-auto"<a href={% url 'mostrar_proveedor' proveedor.id  %}>Mostrar proveedor</a>
                     <a class="btn btn-success"<a href={% url 'editar_proveedor' proveedor.id  %}>Editar proveedor</a>
                     <a class="btn btn-warning"<a href={% url 'eliminar_proveedor' proveedor.id  %}>Eliminar proveedor</a>
                     {% endfor %}

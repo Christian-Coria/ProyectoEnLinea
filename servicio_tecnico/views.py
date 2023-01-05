@@ -25,6 +25,16 @@ def buscar(request):
     return render(request, 'servicio_tecnico/buscar.html', {"reparacion":all_reparacion_list})
 
 
+class ClienteMin(TemplateView):
+    template_name = "presupuesto.html"
+
+class Actualizacion(TemplateView):
+    template_name = "actualizacion.html"
+
+class CheckImei(TemplateView):
+    template_name = "chrck_imei.html"
+
+
 class ListarClientes(LoginRequiredMixin, ListView):
     model = Cliente
     template_name = "servicio_tecnico/listar_clientes.html"

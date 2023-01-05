@@ -15,8 +15,8 @@ Lista de ingresos
     
 
 
-<div class="container-fluid">
-    <div class="row col-12">
+<div class="container-fluid d-flex-inline justify-content-around aling-items-star flex-wrap">
+    <div class="row col-8">
                    
         <h4>Lista de Reparaciones</h4>
         {% if object_list %}
@@ -26,18 +26,25 @@ Lista de ingresos
                 <ul class="list-group list-group-horizontal-sm ">
                     {% for ingreso in object_list %}
                     <li class="list-group-item list-group-item-danger">{{ingreso.cliente}}</li>
-                    <a class="btn btn-primary"<a href={% url 'mostrar_ingreso' ingreso.id  %}>Mostrar ingreso</a>
+                    <a class="btn btn-primary ms-auto"<a href={% url 'mostrar_ingreso' ingreso.id  %}>Mostrar ingreso</a>
                     <a class="btn btn-success"<a href={% url 'editar_ingreso' ingreso.id  %}>Editar ingreso</a>
                     <a class="btn btn-warning"<a href={% url 'eliminar_ingreso' ingreso.id  %}>Eliminar ingreso</a>  
                     {% endfor %}
                 </ul>          
             </ul>
             </div>
+            
         </div>
+        
+        <!--  d-flex justify-content-around aling-items-star flex-wrap  -->
 
         {% else %}
             <p> No hay Reparaciones Registradas </p>
         {% endif%}
     </div>
 </div>
+
+
+
+
 {% endblock %}

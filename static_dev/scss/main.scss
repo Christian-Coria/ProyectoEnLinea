@@ -8,7 +8,7 @@ $principal2: #17b30679;
 $success: $principal2;
 $principal3: #0aa1ed79;
 $info: $principal3;
-$principal4: #beec2679;
+$principal4: hsla(275, 88%, 50%, 0.209);
 $danger: $principal4;
 
 
@@ -21,8 +21,8 @@ $btn-border-radius: 1rem;
 
 .d-flex img{
     width: 330px;
+    /*height: 350px;*/
 }
-
 
 
 
@@ -54,3 +54,5 @@ body {
   #login .container #login-row #login-column #login-box #login-form #register-link {
     margin-top: -85px;
   }
+
+  

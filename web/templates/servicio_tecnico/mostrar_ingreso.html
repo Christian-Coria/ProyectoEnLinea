@@ -7,28 +7,30 @@ Datos de Reparacion
 {% block content %}
 
 <div class="container-fluid">
-    <div class="row col-12">
-                   
-        <h4>ORDEN DE REPARACION</h4>
-            <ul class="list-group list-group-horizontal-sm">
+    <div class="row col-12 m-1 ">
+        <div class="text-uppercase fs-1 m-t-3 text-center">
+                   <p>orden de reparacion</p>
+        </div>
+            <ul class="list-group list-group-horizontal-sm d-flex justify-content-end">
                     
                 <li class="list-group-item">{{object.id}}</li>
                 <li class="list-group-item">{{object.fecha}}</li>
                         
             </ul>
                     
-            <ul class="list-group">
-                <li class="list-group-item">DETALLE DE REPARACION</li>
+            <ul class="list-group ">
+                <li class="list-group-item ">DETALLE DE REPARACION</li>
                 <h2>Cliente</h2>
                 <li class="list-group-item list-group-item-dark"> {{object.cliente}} </li>
-                <li class="list-group-item list-group-item-danger"> {{object.marca}} </li>
                 <h2>Equipo y Falla</h2>
+                <li class="list-group-item list-group-item-danger"> {{object.marca}} </li>
                 <li class="list-group-item list-group-item-danger"> {{object.modelo}} </li>
                 <li class="list-group-item list-group-item-danger"> {{object.imei}} </li>
                 <li class="list-group-item list-group-item-danger"> {{object.falla}} </li>
                 <li class="list-group-item list-group-item-success"> {{object.comentarios}} </li>
-                <li class="list-group-item list-group-item-danger"> {{object.presupuesto}} </li>
                 <h5>Presupuesto</h5>
+                <li class="list-group-item list-group-item-danger"> {{object.presupuesto}} </li>
+                <h5>Pago/Seña</h5>
                 <li class="list-group-item list-group-item-danger"> {{object.pago_seña}} </li>
                     <h5>Valor de Reparacion</h5>
                         <li class="list-group-item list-group-item-info"> {{object.precio}} </li>
@@ -42,9 +44,12 @@ Datos de Reparacion
                         
             </ul>
         </div>
+                <div class="d-grid gap-2">
+                    <a class="btn btn-primary m-3" href="#">Imprimir/Enviar</a>
+                </div>
                     
                 <div class="d-grid gap-2">
-                    <a class="btn btn-primary" href={% url 'listar_ingresos'%}>Volver a la lista</a>
+                    <a class="btn btn-secondary" href={% url 'listar_ingresos'%}>Volver a la lista</a>
                 </div>    
     </div>
 </div>
