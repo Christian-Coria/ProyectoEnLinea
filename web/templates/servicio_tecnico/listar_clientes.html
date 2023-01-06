@@ -5,31 +5,34 @@ Lista de Clientes
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
-    <div class="row col-12">
-                   
-        <h4>Lista de Clientes</h4>
-        {% if object_list %}
-        <div class="container mt-3 p-5"> 
-            <div class="row col-7">   
-            <ul class="list-grup">
-                <ul class="list-group list-group-horizontal-sm ">
-                    {% for cliente in object_list %}    
-                    <li class="list-group-item list-group-item-danger">{{cliente.nombre_completo}}</li>
-                        <a class="btn btn-primary ms-auto"<a href={% url 'mostrar_cliente' cliente.id %}>Mostrar cliente</a>
-                        <a class="btn btn-success"<a href={% url 'editar_cliente' cliente.id %}>Editar cliente</a>
-                        <a class="btn btn-danger"<a href={% url 'eliminar_cliente' cliente.id %}>Eliminar cliente</a>         
-                    {% endfor %}
-                </ul>          
-            </ul>
-            </div>
-        </div>
-
-        {% else %}
-            <p> No hay Clientes Registrados </p>
-        {% endif%}
+<div class="container">
+    <h1>Listado de Clientes</h1>
+        <table table class="table table-bordered table-sm mt-4" style="text-align: center; fron-size: 14px; color: white">
+            <thead>
+                <tr>
+                    <th>Id Cliente</th>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th colspan="2">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in object_list %}
+                <tr>
+                    <td>{{cliente.id}}</td>
+                    <td>{{cliente.nombre_completo}}</td>
+                    <td>{{cliente.telefono}}
+                    <td>
+                        <a class="btn btn-success btn-sm"<a href={% url 'editar_cliente' cliente.id %}>Editar cliente</a>
+                        <a class="btn btn-danger btn-sm"<a href={% url 'eliminar_cliente' cliente.id %}>Eliminar cliente</a> 
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </div>
+
 
 
 {% endblock %}

@@ -5,17 +5,23 @@ Muestra de Cliente
 {% endblock %}
 
 {% block content %}
-<div class="container m-4 border-radius p-1 m-1">
-        <div class="col-md-6 mx-auto text-center fst-italic" style="background-color: rgb(177, 172, 172)">
-            <h1>DETALLE DE CLIENTE</h1>
-            </center>
-            <div class="p-3 mb-2 bg-dark text-white ">
-                <ul >
-                    <li class='list-grup-item'> {{object.id}} </li>
-                    <li class='list-grup-item'> {{object.nombre_completo}} </li>
-                    <li class='list-grup-item'> {{object.telefono}} </li>
-                </ul>
-            </div>
+<div class="container">
+    <div class="row col-12 m-1 ">
+        <div class="text-uppercase fs-1 m-t-3 text-center">
+                   <p>DETALLE DE CLIENTE</p>
+        </div>
+            <ul class="list-group list-group-horizontal-sm d-flex justify-content-end">
+                <h2>Id cliente |</h2>
+                <li class="list-group-item">{{object.id}}</li>
+               
+            </ul>
+            <ul class="list-group ">
+                
+                <h2>Cliente</h2>
+                <li class="list-group-item list-group-item-dark"> {{object.nombre_completo}} </li>
+                <h2>Telefono</h2>
+                <li class="list-group-item list-group-item-danger"> {{object.telefono}} </li>
+
             <div class="d-grid gap-2">
                 <a class="btn btn-primary m-3" href={% url 'listar_clientes'%}>Volver a la lista</a>
             </div>  

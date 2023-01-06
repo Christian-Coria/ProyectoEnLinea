@@ -18,7 +18,7 @@ class ReparacionAdmin(admin.ModelAdmin):   #Filtro para el panel de administraci
          ("Relacion", {"fields": ["cliente"]}),
          ("Datos generales", 
               {"fields": 
-                  ['marca', 'modelo' ,'imei',
+                  ['whatsApp','marca', 'modelo' ,'imei',
                      'falla', 'imagen' ,'comentarios',
                       'precio', 'estado'
                   ]}
@@ -29,7 +29,7 @@ class ReparacionAdmin(admin.ModelAdmin):   #Filtro para el panel de administraci
      list_display = ['id','fecha','cliente','modelo', 'tipo_de_reparacion', 'upper_case_name'] #visualizamos en forma de columnas - pisamos el metodo __str__
      ordering = ['-fecha']    #ordenamos por fecha de publicacion en este caso el signo menos es para alterar el orden natural
      list_filter = ('cliente', 'fecha',) # list_filter es una tupla que permite filtrar
-     search_fields = ('imei', 'estado', 'modelo', 'cliente',) # search_fields agrega opciones de busquedas
+     search_fields = ('whatsApp','imei', 'estado', 'modelo', 'cliente',) # search_fields agrega opciones de busquedas
      list_display_links = ('cliente', 'fecha',) #agrega links a cada columna para ingreso por click
     
      @admin.display(description='Name')  #customizamos el panel con una logica ... en este caso cambia a mayuscula los objetos

@@ -50,10 +50,11 @@ class Reparacion(models.Model):
 
     fecha = models.DateTimeField(auto_now_add=True)
     cliente = models.ForeignKey(Cliente,null=True, on_delete=models.CASCADE)
+    whatsApp = PhoneNumberField(unique = False, null = False, blank = False)
     marca = models.CharField(max_length=40, choices=MARCA)
     modelo = models.CharField(max_length=40, blank=True)
     imei = models.CharField(max_length=40,blank=True )
-    falla = models.TextField(null=False)
+    falla = models.CharField(max_length=100,blank=True )
     imagen = models.ImageField(upload_to="fallas//%Y/%m/%d", null=True, blank=True)   
     comentarios = models.TextField(null=True, blank=True)
     presupuesto = models.DecimalField(default=0.0, max_digits=8, decimal_places=2)

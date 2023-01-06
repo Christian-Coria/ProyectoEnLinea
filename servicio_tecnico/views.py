@@ -69,7 +69,7 @@ class CrearIngreso(LoginRequiredMixin,CreateView):
     model = Reparacion
     template_name = "servicio_tecnico/crear_ingreso.html"
     success_url = 'listar-ingresos'
-    fields = ['cliente','marca','modelo', 'imei', 'falla',
+    fields = ['cliente','whatsApp','marca','modelo', 'imei', 'falla',
     'imagen', 'comentarios', 'presupuesto' ,'pago_seña','precio', 'estado']
 
 
@@ -124,5 +124,4 @@ class EliminarProveedor(LoginRequiredMixin,DeleteView):
     model = Proveedores
     template_name = "servicio_tecnico/eliminar_proveedor.html"
     success_url = reverse_lazy('listar_proveedores')
-
 

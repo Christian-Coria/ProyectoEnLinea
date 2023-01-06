@@ -5,29 +5,30 @@ Lista de Proveedores
 {% endblock title%}
 
 {% block content %}
-<div class="container-fluid">
-    <div class="row col-12">
-                   
-        <h4>Lista de Proveedores</h4>
-        {% if object_list %}
-        <div class="container mt-3 p-5"> 
-            <div class="row col-7">   
-            <ul class="list-grup">
-                <ul class="list-group list-group-horizontal-sm ">
-                    {% for proveedor in object_list %}
-                    <li class="list-group-item list-group-item-danger">{{proveedor.nombre}}</li>
-                    <a class="btn btn-primary ms-auto"<a href={% url 'mostrar_proveedor' proveedor.id  %}>Mostrar proveedor</a>
-                    <a class="btn btn-success"<a href={% url 'editar_proveedor' proveedor.id  %}>Editar proveedor</a>
-                    <a class="btn btn-warning"<a href={% url 'eliminar_proveedor' proveedor.id  %}>Eliminar proveedor</a>
-                    {% endfor %}
-                </ul>          
-            </ul>
-            </div>
-        </div>
-
-        {% else %}
-            <p> No hay Clientes Registrados </p>
-        {% endif%}
+<h1>Listado de Proveedores</h1>
+        <table table class="table table-bordered table-sm mt-4" style="text-align: center; fron-size: 14px; color: white">
+            <thead>
+                <tr>
+                    <th>Id Proveedor</th>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th colspan="2">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for proveedor in object_list %}
+                <tr>
+                    <td>{{proveedor.id}}</td>
+                    <td>{{proveedor.nombre}}</td>
+                    <td>{{proveedor.telefono}}
+                    <td>
+                        <a class="btn btn-success btn-sm"<a href={% url 'editar_proveedor' proveedor.id %}>Editar</a>
+                        <a class="btn btn-danger btn-sm"<a href={% url 'eliminar_proveedor' proveedor.id %}>Eliminar</a> 
+                    </td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
     </div>
 </div>
 
