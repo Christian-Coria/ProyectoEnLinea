@@ -14,8 +14,6 @@ from django_xhtml2pdf.views import PdfMixin
 from django_xhtml2pdf.utils import pdf_decorator
 
 
-
-
 def buscar(request):
 
     if 'q' in request.GET:
@@ -33,18 +31,6 @@ def verificar_remito(request):
     if 'q' in request.GET:
         q = request.GET['q']
         all_reparacion_list = Reparacion.objects.filter(Q(cliente__nombre_completo__icontains=q)).order_by('cliente')
-
-        def remito_user(request):
-            user_projects = request.user.client_user.project_set.all()
-            user_remito = []
-
-            for project in user_projects:
-                user_remito += [*project.remito_set.all()]
-
-            return render(request, 'support/viewTicket.html' , {
-                'user_remito': user_remito, 
-                'user_projects': user_projects
-            })
         
     else:
         all_reparacion_list = Reparacion.objects.all().order_by('cliente')                

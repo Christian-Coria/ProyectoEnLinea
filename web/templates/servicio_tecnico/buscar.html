@@ -25,7 +25,7 @@ Administracion Servicio Tecnico
       <div class="card shadow p-3 mb-5 bg-info rounded text-center text-dark text-uppercase">
         <div class="card-body">
           <h5 class="card-title fs-4">Seccion Reparaciones</h5>
-          <p class="card-text">Administra nuevas reparaciontext-center fs-4es.</p>
+          <p class="card-text">Administra nuevas reparaciones</p>
           <a href={% url 'crear_ingreso' %} class="btn btn-primary d-grid gap-2">Ingresar Reparacion</a>
         </div>
       </div>
@@ -93,7 +93,7 @@ Administracion Servicio Tecnico
                     
                 </tr>
             </thead>
-            {% for reparacion in reparacion %}
+            {% for reparacion in reparacion %}   <!-- user_reparacion  seria la opcion a modificar aqui -->
             <tr> 
                 <td>{{ reparacion.id }}</td>
                 <td>{{ reparacion.fecha }}</td>
