@@ -50,41 +50,19 @@ Datos de Reparacion
                         <li class="list-group-item list-group-item-info"> {{object.precio}} </li>
                     <h5>Estado de Reparacion</h5>
                 <li class="list-group-item list-group-item-danger"> {{object.estado}} </li>
-                    <p> Imagen de Equipo o Reparacion: </p>
-                {% if object.imagen %}
-                        
-                    <img src="{{ object.imagen.url }}"alt="" height="200px"/>
-                {% endif %}
-                       
-                        
+                     
             </ul>
         </div>
                 <div class="d-grid gap-2">
-                    <a class="btn btn-primary m-3 d-print-none" href="#">Imprimir/Enviar</a>
+                    <a class="btn btn-primary m-3 d-print-none" href={% url 'pdf_ingreso' object.id %}>Imprimir</a>
+                    <a class="btn btn-success btn-sm" href={% url 'editar_remito' object.id %}>Editar remito</a>
+                    <a class="btn btn-success btn-sm" href={% url 'verificar_remito'%}>buscar remito</a>
                 </div>
-                    
-                <div class="d-grid gap-2">
-                    <a class="btn btn-secondary d-print-none" href={% url 'listar_ingresos'%}>Volver a la lista</a>
-                </div>    
+
     </div>
 </div>
                     
-<div class="container">
-    <div class="row col-12">
 
-        <p>Servicio Tecnico Especializado - >/p>
-        </br>
-        <p>Este local trabaja conforme a la ley 25891. Todo valor queda sujeto al tipo de cambio y puede ser cambiado sin previa notificacion.
-            Los términos de garantía corresponden LA REGLAMENTACION de la empresa desde la entrega del terminal y solo por la falla reparada.
-            Concluido ese plazo se deberá reingresar el equipo para un nuevo diagnostico.
-            La Garantía por cambios de módulo es de 48 hs, tiempo suficiente para la prueba del mismo y verificar así el funcionamiento del 
-            repuesto como la correcta colocación del mismo.
-            De encontrar falla deberá comunicarse inmediatamente al whastapp. solo se considera garantía si está en ese término  no se verifica
-            golpe o humedad en el terminal, ENTIÉNDASE POR FALLA QUE SÍ SE ENTREGÓ CON PERFECTO FUNCIONAMIENTO DE LA IMAGEN, ESTA NO PUEDE 
-            REGRESAR NEGRA O CON RAYAS YA QUE INDICAN GOLPE DE LA MISMA y se considera fuera de garantía sin importar el tiempo de transcurrido 
-            desde la entrega del equipo hasta el fallo por daño del cliente.
-        </p>
-    </div>
 </div>
  
 

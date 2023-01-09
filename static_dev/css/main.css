@@ -39,7 +39,7 @@
   --bs-secondary: #6c757d;
   --bs-success: #17b30679;
   --bs-info: #0aa1ed79;
-  --bs-warning: #e6db0ac4;
+  --bs-warning: rgba(230, 219, 10, 0.769);
   --bs-danger: rgba(146, 15, 240, 0.209);
   --bs-light: #f8f9fa;
   --bs-dark: #0f0f10a1;
@@ -2409,13 +2409,13 @@ progress {
 /* line 3, ../../ProyectoEnLinea/static_dev/scss/bootstrap/mixins/_table-variants.scss */
 .table-warning {
   --bs-table-color: #000;
-  --bs-table-bg: rgba(252, 250, 222, 0.953725);
-  --bs-table-border-color: rgba(225, 223, 198, 0.958353);
-  --bs-table-striped-bg: rgba(238, 236, 210, 0.956039);
+  --bs-table-bg: rgba(252, 250, 222, 0.9538);
+  --bs-table-border-color: rgba(225, 223, 198, 0.95842);
+  --bs-table-striped-bg: rgba(238, 236, 210, 0.95611);
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: rgba(225, 223, 198, 0.958353);
+  --bs-table-active-bg: rgba(225, 223, 198, 0.95842);
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: rgba(231, 230, 204, 0.957196);
+  --bs-table-hover-bg: rgba(231, 230, 204, 0.957265);
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -3729,19 +3729,19 @@ fieldset:disabled .btn {
 /* line 123, ../../ProyectoEnLinea/static_dev/scss/bootstrap/_buttons.scss */
 .btn-warning {
   --bs-btn-color: #000;
-  --bs-btn-bg: #e6db0ac4;
-  --bs-btn-border-color: #e6db0ac4;
+  --bs-btn-bg: rgba(230, 219, 10, 0.769);
+  --bs-btn-border-color: rgba(230, 219, 10, 0.769);
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: rgba(236, 227, 64, 0.803333);
-  --bs-btn-hover-border-color: rgba(234, 224, 47, 0.791765);
+  --bs-btn-hover-bg: rgba(236, 227, 64, 0.80365);
+  --bs-btn-hover-border-color: rgba(234, 224, 47, 0.7921);
   --bs-btn-focus-shadow-rgb: 179, 171, 8;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: rgba(237, 229, 80, 0.814902);
-  --bs-btn-active-border-color: rgba(234, 224, 47, 0.791765);
+  --bs-btn-active-bg: rgba(237, 229, 80, 0.8152);
+  --bs-btn-active-border-color: rgba(234, 224, 47, 0.7921);
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #e6db0ac4;
-  --bs-btn-disabled-border-color: #e6db0ac4;
+  --bs-btn-disabled-bg: rgba(230, 219, 10, 0.769);
+  --bs-btn-disabled-border-color: rgba(230, 219, 10, 0.769);
 }
 
 /* line 123, ../../ProyectoEnLinea/static_dev/scss/bootstrap/_buttons.scss */
@@ -3872,19 +3872,19 @@ fieldset:disabled .btn {
 
 /* line 149, ../../ProyectoEnLinea/static_dev/scss/bootstrap/_buttons.scss */
 .btn-outline-warning {
-  --bs-btn-color: #e6db0ac4;
-  --bs-btn-border-color: #e6db0ac4;
+  --bs-btn-color: rgba(230, 219, 10, 0.769);
+  --bs-btn-border-color: rgba(230, 219, 10, 0.769);
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #e6db0ac4;
-  --bs-btn-hover-border-color: #e6db0ac4;
+  --bs-btn-hover-bg: rgba(230, 219, 10, 0.769);
+  --bs-btn-hover-border-color: rgba(230, 219, 10, 0.769);
   --bs-btn-focus-shadow-rgb: 230, 219, 10;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #e6db0ac4;
-  --bs-btn-active-border-color: #e6db0ac4;
+  --bs-btn-active-bg: rgba(230, 219, 10, 0.769);
+  --bs-btn-active-border-color: rgba(230, 219, 10, 0.769);
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #e6db0ac4;
+  --bs-btn-disabled-color: rgba(230, 219, 10, 0.769);
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #e6db0ac4;
+  --bs-btn-disabled-border-color: rgba(230, 219, 10, 0.769);
   --bs-gradient: none;
 }
 
@@ -8385,12 +8385,12 @@ fieldset:disabled .btn {
 
 /* line 2, ../../ProyectoEnLinea/static_dev/scss/bootstrap/helpers/_colored-links.scss */
 .link-warning {
-  color: #e6db0ac4 !important;
+  color: rgba(230, 219, 10, 0.769) !important;
 }
 
 /* line 6, ../../ProyectoEnLinea/static_dev/scss/bootstrap/helpers/_colored-links.scss */
 .link-warning:hover, .link-warning:focus {
-  color: rgba(237, 229, 80, 0.814902) !important;
+  color: rgba(237, 229, 80, 0.8152) !important;
 }
 
 /* line 2, ../../ProyectoEnLinea/static_dev/scss/bootstrap/helpers/_colored-links.scss */

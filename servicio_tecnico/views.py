@@ -10,6 +10,9 @@ from django.db.models import Q
 from django.utils.datastructures import MultiValueDictKeyError
 from django.http import HttpResponse
 from django.core.paginator import Paginator
+from django_xhtml2pdf.views import PdfMixin
+from django_xhtml2pdf.utils import pdf_decorator
+
 
 
 
@@ -23,6 +26,30 @@ def buscar(request):
         all_reparacion_list = Reparacion.objects.all().order_by('cliente')                
         
     return render(request, 'servicio_tecnico/buscar.html', {"reparacion":all_reparacion_list})
+
+
+def verificar_remito(request):
+
+    if 'q' in request.GET:
+        q = request.GET['q']
+        all_reparacion_list = Reparacion.objects.filter(Q(cliente__nombre_completo__icontains=q)).order_by('cliente')
+
+        def remito_user(request):
+            user_projects = request.user.client_user.project_set.all()
+            user_remito = []
+
+            for project in user_projects:
+                user_remito += [*project.remito_set.all()]
+
+            return render(request, 'support/viewTicket.html' , {
+                'user_remito': user_remito, 
+                'user_projects': user_projects
+            })
+        
+    else:
+        all_reparacion_list = Reparacion.objects.all().order_by('cliente')                
+        
+    return render(request, 'servicio_tecnico/verificar_remito.html', {"reparacion":all_reparacion_list})
 
 
 class ClienteMin(TemplateView):
@@ -68,7 +95,7 @@ class ListarIngresos(LoginRequiredMixin, ListView):
 class CrearIngreso(LoginRequiredMixin,CreateView):
     model = Reparacion
     template_name = "servicio_tecnico/crear_ingreso.html"
-    success_url = 'listar-ingresos'
+    success_url = 'buscar'
     fields = ['cliente','whatsApp','marca','modelo', 'imei', 'falla',
     'imagen', 'comentarios', 'presupuesto' ,'pago_seña','precio', 'estado']
 
@@ -79,6 +106,13 @@ class EditarIngreso(LoginRequiredMixin,UpdateView):
     success_url = reverse_lazy('listar_ingresos')
     fields = ['cliente','marca','modelo', 'imei', 'falla',
     'imagen', 'comentarios', 'presupuesto' ,'pago_seña','precio', 'estado']
+
+
+class EditarRemito(UpdateView):
+    model = Reparacion
+    template_name = 'servicio_tecnico/editar_remito.html'
+    success_url = reverse_lazy('verificar_remito')
+    fields = ['estado']
 
 class EliminarIngreso(LoginRequiredMixin,DeleteView):
     model = Reparacion
@@ -99,6 +133,11 @@ class MostrarProveedor(LoginRequiredMixin,DetailView):
 class MostrarIngreso(LoginRequiredMixin,DetailView):
     model = Reparacion
     template_name = "servicio_tecnico/mostrar_ingreso.html"
+
+
+class PdfIngreso(PdfMixin,DetailView):
+    model = Reparacion
+    template_name = "servicio_tecnico/pdf_ingreso.html"
 
 
 class ListarProveedores(LoginRequiredMixin,ListView):

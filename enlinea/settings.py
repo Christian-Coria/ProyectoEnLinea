@@ -53,6 +53,7 @@ INSTALLED_APPS = [
      'product.apps.ProductConfig',
      'web.apps.WebConfig',
      'usuarios.apps.UsuariosConfig',
+     
 ]
 
 MIDDLEWARE = [
